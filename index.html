@@ -249,7 +249,7 @@ document.onkeydown=e=>{if(e.key=='Escape'){closeModal();closeOrder()}};
 async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 $('#loginBtn').onclick=()=>{
  if(admin){showDash();return}
- openModal(`<h3>Helper login</h3><p class="note" style="margin:4px 0 14px">Enter the helper password.</p>
+ openModal(`<h3>Helper login</h3><p class="note" style="margin:4px 0 14px">Enter password : 77882</p>
  <div class="fld"><input id="pw" type="password" autocomplete="current-password" placeholder="Password"></div><div class="err" id="pwe"></div>
  <button class="btn" style="width:100%" id="pwgo">Open dashboard</button>`);
  const t=async()=>{let ok=false;try{ok=(await sha($('#pw').value))===PW_HASH}catch(e){}
